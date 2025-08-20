@@ -7,8 +7,71 @@
   <title>Cannabi-doctor</title>
 </head>
 <body>
-  <button class="btn-green">Probar simulador</button>
-  <button class="btn-white">Ver beneficios</button>
-  <div class="button_slide slide_right">PROBAR SIMULADOR</div>
+  <header>
+    <button class="btn-white" onclick="toggleBeneficios()">Ver beneficios</button>
+  </header>
+
+  <main>
+    <div id="beneficios-container" style="display: none;">
+      <h1>🌱 Beneficios del Cannabis Medicinal</h1>
+      
+      <div class="beneficios-grid">
+        <div class="beneficio-item">
+          <h3>1. Manejo del dolor crónico</h3>
+          <p>El cannabis medicinal ha demostrado ser eficaz para aliviar dolores persistentes asociados a enfermedades como artritis, fibromialgia, neuropatías o cáncer, reduciendo la necesidad de analgésicos opioides.</p>
+        </div>
+
+        <div class="beneficio-item">
+          <h3>2. Propiedades antiinflamatorias</h3>
+          <p>Los cannabinoides, como el CBD, actúan sobre el sistema endocannabinoide del cuerpo reduciendo la inflamación, lo que beneficia a pacientes con enfermedades autoinmunes o inflamatorias.</p>
+        </div>
+
+        <div class="beneficio-item">
+          <h3>3. Control de la ansiedad y el estrés</h3>
+          <p>El CBD ayuda a equilibrar los niveles de serotonina en el cerebro, favoreciendo la relajación y reduciendo los episodios de ansiedad, insomnio y estrés postraumático (TEPT).</p>
+        </div>
+
+        <div class="beneficio-item">
+          <h3>4. Mejora del sueño</h3>
+          <p>El cannabis medicinal puede favorecer ciclos de sueño más regulares y profundos, siendo útil en personas con insomnio o alteraciones del descanso.</p>
+        </div>
+
+        <div class="beneficio-item">
+          <h3>5. Estimulación del apetito</h3>
+          <p>En pacientes que han perdido el apetito por tratamientos como la quimioterapia o enfermedades como VIH/SIDA, el cannabis puede ayudar a recuperar las ganas de comer y evitar la desnutrición.</p>
+        </div>
+
+        <div class="beneficio-item">
+          <h3>6. Apoyo en trastornos neurológicos</h3>
+          <p>El CBD ha mostrado resultados positivos en el tratamiento de epilepsia resistente a fármacos, esclerosis múltiple, Parkinson y otras condiciones neurológicas.</p>
+        </div>
+
+        <div class="beneficio-item">
+          <h3>7. Alternativa natural y segura</h3>
+          <p>En comparación con medicamentos tradicionales, el cannabis medicinal suele tener menos efectos secundarios y puede ofrecer una alternativa más natural para mejorar la calidad de vida.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="otros-botones">
+      <button class="btn-green">Probar simulador</button>
+      <div class="button_slide slide_right">PROBAR SIMULADOR</div>
+    </div>
+  </main>
+
+  <script>
+    function toggleBeneficios() {
+      const beneficiosContainer = document.getElementById('beneficios-container');
+      const otrosBotones = document.getElementById('otros-botones');
+      
+      if (beneficiosContainer.style.display === 'none') {
+        beneficiosContainer.style.display = 'block';
+        otrosBotones.style.display = 'none';
+      } else {
+        beneficiosContainer.style.display = 'none';
+        otrosBotones.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
