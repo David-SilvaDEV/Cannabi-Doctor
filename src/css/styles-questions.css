@@ -1,107 +1,61 @@
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+
+
+
+/* Sección questions */
+.questions-section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #16302b;
+  
 }
 
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
+.questions-section h2 {
+  font-size: 2rem;
+  color: #16302b; /* Verde similar al de beneficios */
+  margin-bottom: 30px;
 }
 
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+/* Contenedor de preguntas */
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/*Estilo de cada item */
+.questions-item {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+/*Título de la pregunta */
+.questions-item summary {
+  padding: 15px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none; / elimina el triángulo por defecto /
+  background: linear-gradient(to right, #d1fae5, #bbf7d0);
+  border-radius: 8px 8px 0 0;
+  transition: background 0.3s ease;
 }
 
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+.questions-item summary:hover {
+  background: #a38560;
 }
 
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
+/* Respuesta */
+.questions-item p {
+  padding: 15px 20px;
+  margin: 0;
+  font-size: 0.95rem;
+  color: #374151;
+  border-top: 1px solid #e5e7eb;
 }
