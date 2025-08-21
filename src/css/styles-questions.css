@@ -1,6 +1,9 @@
 
 *{
-  background-color: #fff9f4;
+ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Sección questions */
@@ -45,6 +48,7 @@
   cursor: pointer;
   list-style: none; 
   background-color: #16302b;
+
   border-radius: 8px 8px 0 0;
   transition: background 0.3s ease;
   color:#fff9f4;
@@ -63,3 +67,96 @@
   color: #374151;
   border-top: 1px solid #e5e7eb;
 }
+
+
+/*===================================================================*/
+/*======================header=======================================*/
+header {
+    background-color: #f9f1e6;
+    height: auto;
+    display: grid;
+    grid-template-columns: 3fr 6fr 3fr;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        margin: 5px;
+    }
+}
+
+.text {
+    margin: 5px;
+
+    h1 {
+        margin-bottom: -5px;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+        display: flex;
+        gap: 40px;
+
+    }
+
+    li {
+        display: flex;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        font-size: 1rem;
+    }
+
+    a:hover {
+        color: #2ecc71;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: #e74c3c;
+    }
+
+}
+
+.container-btn-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_slide {
+    color: #f7f5f2;
+    border: 2px solid #1f4c36;
+    background-color: #1f4b35;
+    border-radius: 8px;
+    padding: 12px 24px;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #1f4c36;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}
+
+.slide_right:hover {
+    color: #f7f5f2;
+    box-shadow: inset 400px 0 0 0 #0f251b;
+}
+
+/*===================================================================*/
+/*======================header=======================================*/
