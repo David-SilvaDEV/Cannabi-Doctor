@@ -1,4 +1,6 @@
-
+*{
+  background-color: #fff9f4;
+}
 
 
 /* Sección questions */
@@ -42,9 +44,10 @@
   font-weight: bold;
   cursor: pointer;
   list-style: none; 
-  background: linear-gradient(to right, #d1fae5, #bbf7d0);
+  background-color: #16302b;
   border-radius: 8px 8px 0 0;
   transition: background 0.3s ease;
+  color:#fff9f4;
 }
 
 .questions-item summary:hover {
