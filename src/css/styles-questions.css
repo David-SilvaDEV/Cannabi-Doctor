@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 
-=======
 *{
   background-color: #fff9f4;
 }
->>>>>>> dev
-
 
 /* Sección questions */
 .questions-section {
@@ -48,16 +44,11 @@
   font-weight: bold;
   cursor: pointer;
   list-style: none; 
-<<<<<<< HEAD
-  background: linear-gradient(to right, #d1fae5, #bbf7d0);
-  border-radius: 8px 8px 0 0;
-  transition: background 0.3s ease;
-=======
   background-color: #16302b;
   border-radius: 8px 8px 0 0;
   transition: background 0.3s ease;
   color:#fff9f4;
->>>>>>> dev
+
 }
 
 .questions-item summary:hover {
