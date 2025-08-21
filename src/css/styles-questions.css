@@ -191,7 +191,7 @@ nav {
   
   .hero-text h1 {
     font-size: 2.2rem;
-    color: #0f3c2e;
+    color:#16302b;
     margin-bottom: 1rem;
   }
   
@@ -210,17 +210,27 @@ nav {
     padding: 0.3rem 0.8rem;
     border-radius: 999px;
     font-size: 0.9rem;
+    
+    
   }
 
    /* Card lateral */
   .hero-card {
     flex: 1;
-    background: #0f3c2e;
+    background:#16302b;
     color: white;
     padding: 1.5rem;
     border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border: #d1d5db, 1px solid;
   }
   
+  .hero-card img { /*imagen de question face */
+   width: 250px;
+   border-radius: 15px;
+      
+  }
+
   .hero-card h2 {
     margin-bottom: 0.8rem;
   }
@@ -230,3 +240,4 @@ nav {
     font-size: 0.95rem;
     color: #e0e0e0;
   } 
+
