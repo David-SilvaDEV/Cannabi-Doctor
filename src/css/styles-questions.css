@@ -41,7 +41,7 @@
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  list-style: none; / elimina el triángulo por defecto /
+  list-style: none; 
   background: linear-gradient(to right, #d1fae5, #bbf7d0);
   border-radius: 8px 8px 0 0;
   transition: background 0.3s ease;
