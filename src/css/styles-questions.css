@@ -339,7 +339,7 @@ nav {
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  box-shadow: 0 0 0 2px rgba(13, 97, 61, 0.3);
+  box-shadow: 0 0 0 2px rgb(35, 119, 83);
 }
 
 /* Footer */
