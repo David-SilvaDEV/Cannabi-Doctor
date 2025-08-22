@@ -8,8 +8,8 @@
 :root {
   --primary-color: #1f4b35;
   --primary-light: #2d6a4e;
-  --primary-dark: #0f251b;
-  --secondary-color: #4CAF50;
+  --primary-dark: #132c21;
+  --secondary-color: #172f2a;
   --accent-color: #8BC34A;
   --text-primary: #2c3e50;
   --text-secondary: #7f8c8d;
@@ -22,7 +22,7 @@
   --shadow-heavy: rgba(31, 75, 53, 0.2);
   --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  --gradient-hero: linear-gradient(135deg, rgba(31, 75, 53, 0.95) 0%, rgba(76, 175, 80, 0.9) 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(22, 48, 17, 0.957) 0%, rgba(22, 48, 17, 0.957) 100%);
 }
 
 /* Reset y estilos base */
