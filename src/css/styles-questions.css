@@ -256,16 +256,13 @@ nav {
   margin: 3rem auto;
   padding: 0;
   background: transparent;
-<<<<<<< HEAD
-  font-family: 'Inter', sans-serif;
- 
-=======
+
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   
  
   
->>>>>>> 3813f5efdd73c8047bb452a6272acba0867da9d5
+
 }
 
 /* Título */
@@ -274,14 +271,10 @@ nav {
   font-weight: 700;
   color:#16302b;
   margin-bottom: 0.5rem;
-<<<<<<< HEAD
-
-=======
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   
->>>>>>> 3813f5efdd73c8047bb452a6272acba0867da9d5
 }
 
 .ask p {
