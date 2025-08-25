@@ -13,6 +13,7 @@
   margin: 0 auto;
   text-align: center;
   color: #16302b;
+  font-family: "Poppins", sans-serif;
   
 }
 
@@ -159,7 +160,7 @@ nav {
     border-radius: 8px;
     padding: 12px 24px;
     display: inline-block;
-    font-family: sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
     cursor: pointer;
@@ -183,6 +184,7 @@ nav {
     padding: 2rem;
     gap: 2rem;
     text-align:start;
+    font-family: "Poppins", sans-serif;
   }
   
   .hero-text {
@@ -193,6 +195,7 @@ nav {
     font-size: 2.2rem;
     color:#16302b;
     margin-bottom: 1rem;
+    
   }
   
   .hero-text p {
@@ -253,22 +256,29 @@ nav {
   margin: 3rem auto;
   padding: 0;
   background: transparent;
-  font-family: 'Inter', sans-serif;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  
  
   
+
 }
 
 /* Título */
 .ask h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color:#16302b;
   margin-bottom: 0.5rem;
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  
 }
 
 .ask p {
-  color: #555;
+  color:#16302b;
   margin-bottom: 2rem;
   font-size: 1rem;
   text-align: center;
@@ -284,6 +294,7 @@ nav {
   flex-direction: column;
   gap: 1.5rem;
   border: 1px solid #f0ece6;
+  
 }
 
 /* Grid para nombre y email */
@@ -303,6 +314,7 @@ nav {
   color: #333;
   margin-bottom: 0.5rem;
   font-weight: 500;
+  
 }
 
 .field input,
@@ -317,17 +329,19 @@ nav {
   color: #333;
   outline: none;
   transition: box-shadow 0.2s ease;
+  
 }
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: #b3aead;
+ color: #b3aead;
+ font-family: "Poppins", sans-serif;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  box-shadow: 0 0 0 2px rgba(13, 97, 61, 0.3);
+  box-shadow: 0 0 0 2px rgb(35, 119, 83);
 }
 
 /* Footer */
@@ -359,7 +373,7 @@ nav {
 }
 
 .btn-primary {
-  background: #16302b;/* verde oscuro */
+  background:#16302b;/* verde oscuro */
   color: #fff;
 }
 
