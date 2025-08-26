@@ -142,8 +142,7 @@ nav {
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    background-color: rgb(238, 173, 87)
-    ;
+    background-color: #fff
   }
   
   img{ max-width:100%; display:block; }
@@ -213,62 +212,6 @@ nav {
   .usage h3{ margin: 2px 0 4px; color: var(--green-600); font-size: 1rem; }
   .usage p{ margin: 0; color: var(--muted); }
   
-  /* ========= Note / Callout ========= */
-  .note{
-    display:flex; gap: 14px; align-items:flex-start; margin-top: 22px;
-    background: #c8a67f; color: #fff; border-radius: 12px; padding: 16px 18px;
-    box-shadow: 0 8px 18px rgba(156,122,80,.25);
-  }
-  .note__icon{ font-size: 22px; line-height:1; }
-  .note__title{ margin: 0 0 4px; }
-  
-  /* ========= Beneficios adicionales ========= */
-  .benefits-extra{
-    list-style:none; padding:0; margin: 18px 0 0;
-    display:grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  }
-  .benefits-extra li{
-    display:flex; gap: 12px; align-items:flex-start; justify-content:center; text-align:left;
-  }
-  .benefits-extra span{
-    width:42px; height:42px; border-radius:50%; display:grid; place-items:center; flex:none;
-    background: #fff; border:1px solid var(--sand-300); box-shadow: 0 2px 8px rgba(0,0,0,.04);
-  }
-  .benefits-extra h4{ margin: 2px 0 4px; color: var(--green-600); font-size: 1rem; }
-  .benefits-extra p{ margin: 0; color: var(--muted); }
-  
-  /* ========= Gomitas ========= */
- 
-  .gummies__grid{
-    display:grid; gap: 18px; grid-template-columns: 1fr 1fr;
-  }
-  .panel{
-    background:#fff; border-radius: 14px; border:1px solid var(--sand-300);
-    padding: 18px; box-shadow: var(--shadow);
-  }
-  .panel__title{ color: var(--green-700); margin-bottom: 10px; }
-  .list{
-    margin: 0; padding-left: 0; list-style: none; display: grid; gap: 10px;
-  }
-  .list li{ color: var(--text); }
-  .tip{
-    border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; color:#1f2937; background:#fff;
-    border:1px solid var(--sand-300);
-  }
-  .tip--sand{ background: #e8d3b6; border: none; color:#3b2f1e; }
-  .tip--green{ background: #0f3d2e; color:#f0fdf4; border: none; }
-  .tip--border{ background:#fff; border:2px solid var(--sand-500); }
-
-  .site-footer{
-    background: #0f2f2b; color: #eaf6f2; padding: 28px 0; margin-top: 40px;
-  }
-  .footer__wrap{ text-align:center; display:grid; gap: 8px; }
-  .footer__brand{
-    display:flex; gap:10px; justify-content:center; align-items:center; font-size: 1.05rem;
-  }
-  .leaf{ color:#eaf6f2; }
-  .footer__text{ margin: 0; opacity:.95; }
-  .footer__disclaimer{ margin: 0; opacity:.7; font-size:.95rem; }
   
   /* ========= Responsive ========= */
   @media (max-width: 900px){
