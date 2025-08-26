@@ -1,9 +1,38 @@
+/* Importar fuentes */
+@import url('../css/fonst/poppins.css');
+
+/* Variables CSS */
+:root {
+    --primary-color: #1f4b35;
+    --primary-light: #2d6a4e;
+    --primary-dark: #132c21;
+    --secondary-color: #172f2a;
+    --accent-color: #8BC34A;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --text-light: #95a5a6;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --border-color: #e9ecef;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-heavy: rgba(31, 75, 53, 0.2);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(22, 48, 17, 0.957) 0%, rgba(22, 48, 17, 0.957) 100%);
+}
 
 *{
- 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-light);
 }
 
 /* Sección questions ----------------*/ 
@@ -85,65 +114,89 @@
 }
 
 
-/*===================================================================*/
-/*======================header=======================================*/
+/* ===================== HEADER ===================== */
 header {
-    background-color: #f9f1e6;
+    background-color: #F9F1E6;
+    box-shadow: 0 2px 20px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     height: auto;
     display: grid;
     grid-template-columns: 3fr 6fr 3fr;
+    align-items: center;
+    padding: 15px 20px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    img {
-        margin: 5px;
-    }
+    gap: 15px;
 }
 
-.text {
+.logo img {
     margin: 5px;
+    transition: transform 0.3s ease;
+}
 
-    h1 {
-        margin-bottom: -5px;
-    }
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.text h1 {
+    margin-bottom: -5px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.text h4 {
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: 0.9rem;
 }
 
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-    ul {
-        display: flex;
-        gap: 40px;
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
 
-    }
+nav a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    position: relative;
+    padding: 8px 0;
+}
 
-    li {
-        display: flex;
-    }
+nav a:hover {
+    color: var(--secondary-color);
+}
 
-    a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        transition: color 0.3s ease;
-        font-size: 1rem;
-    }
+nav a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
 
-    a:hover {
-        color: #2ecc71;
-        text-decoration: underline;
-    }
-
-    a:active {
-        color: #e74c3c;
-    }
-
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
 }
 
 .container-btn-nav {
@@ -153,30 +206,27 @@ nav {
 }
 
 .button_slide {
-    color: #f7f5f2;
-    border: 2px solid #1f4c36;
-    background-color: #1f4b35;
-    border-radius: 8px;
+    color: var(--background-white);
+    border: 2px solid var(--primary-color);
+    background: var(--gradient-primary);
+    border-radius: 25px;
     padding: 12px 24px;
     display: inline-block;
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 14px;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    box-shadow: inset 0 0 0 0 #1f4c36;
-    -webkit-transition: ease-out 0.4s;
-    -moz-transition: ease-out 0.4s;
-    transition: ease-out 0.4s;
+    box-shadow: 0 4px 15px var(--shadow-heavy);
+    transition: all 0.4s ease;
+    text-transform: uppercase;
 }
 
-.slide_right:hover {
-    color: #f7f5f2;
-    box-shadow: inset 400px 0 0 0 #0f251b;
+.button_slide:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-heavy);
+    background: var(--primary-dark);
 }
-
-/*===================================================================*/
-/*=============================================================*/
-
 .hero {
     display: flex;
     justify-content: space-between;
