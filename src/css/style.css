@@ -242,6 +242,13 @@ nav a.active::after {
     background-color: #16302B;
 }
 
+/* ===================== FOCUS STATES ===================== */
+button:focus,
+a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
 @media (max-width: 768px) {
     .slide {
         flex-direction: column;

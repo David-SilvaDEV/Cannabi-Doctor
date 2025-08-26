@@ -437,3 +437,10 @@ nav a.active::after {
     background-color: #fdf9f6;
 
 }
+
+/* ===================== FOCUS STATES ===================== */
+button:focus,
+a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}

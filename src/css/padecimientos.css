@@ -320,6 +320,13 @@ h2.section-title {
     background: #f1f1f1;
 }
 
+/* ===================== FOCUS STATES ===================== */
+button:focus,
+a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
 @media (max-width: 480px) {
     .wrap {
         margin: 32px auto;
