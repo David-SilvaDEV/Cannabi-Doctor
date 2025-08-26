@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Crear Cuenta — Cannabi Doctor</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    </head><body>
+    <header class="header"><h1>🌿 Cannabi Doctor</h1><a class="link" href="login.html">Iniciar sesión</a></header>
+    
+    <main class="wrap">
+      <section class="card">
+        <h2>Crear Cuenta</h2>
+        <form id="form-register" class="form" novalidate>
+          <input class="input" id="name" type="text" placeholder="Nombre completo" autocomplete="name" required>
+          <input class="input" id="email" type="email" placeholder="Correo electrónico" autocomplete="email" required>
+          <input class="input" id="password" type="password" placeholder="Contraseña (min 8 caracteres)" required>
+          <input class="input" id="confirm" type="password" placeholder="Confirmar contraseña" required>
+          <label class="row">
+            <input type="checkbox" id="terms" required>
+            <span>Acepto los <a class="link" href="terminos.html" target="_blank">términos y condiciones</a></span>
+          </label>
+          <button class="btn" type="submit">Crear cuenta</button>
+        </form>
+    
+        <div class="divider" style="margin:14px 0">o continúa con</div>
+        <button id="btn-google" class="btn btn-outline" type="button">Google</button>
+    
+        <p class="meta">¿Ya tienes cuenta? <a class="link" href="login.html">Inicia sesión</a></p>
+        <p class="helper" id="msg"></p>
+      </section>
+    </main>
+    
+    <!-- Firebase + lógica -->
+    <script type="module">
+      import {
+        auth, onAuthStateChanged, createUserWithEmailAndPassword,
+        providerGoogle, signInWithPopup, updateProfile
+      } from "./firebase.js";
+      import { createUserProfile } from "./firebase.js";
+    
+      const $ = (id)=>document.getElementById(id);
+      const form = $("form-register"); const msg = $("msg");
+    
+      form.addEventListener("submit", async (e)=>{
+        e.preventDefault(); msg.textContent = "";
+        const name = $("name").value.trim();
+        const email = $("email").value.trim();
+        const pass = $("password").value;
+        const confirm = $("confirm").value;
+        const terms = $("terms").checked;
+    
+        if (!terms) return msg.textContent = "Debes aceptar los términos.";
+        if (pass.length < 8) return msg.textContent = "La contraseña debe tener al menos 8 caracteres.";
+        if (pass !== confirm) return msg.textContent = "Las contraseñas no coinciden.";
+    
+        try {
+          const cred = await createUserWithEmailAndPassword(auth, email, pass);
+          await updateProfile(cred.user, { displayName: name });
+          await createUserProfile(cred.user.uid, { email, name });
+          window.location.href = "app.html"; // tu panel/home autenticado
+        } catch (err) {
+          msg.textContent = parseError(err);
+        }
+      });
+    
+      $("btn-google").addEventListener("click", async ()=>{
+        msg.textContent = "";
+        try {
+          const { user } = await signInWithPopup(auth, providerGoogle);
+          await createUserProfile(user.uid, { email: user.email, name: user.displayName ?? "Usuario" });
+          window.location.href = "app.html";
+        } catch (err) { msg.textContent = parseError(err); }
+      });
+    
+      onAuthStateChanged(auth, (u)=>{ if(u) {/* opcional redir si ya logueado */} });
+    
+      function parseError(e){
+        const code = e?.code ?? "";
+        if(code.includes("email-already-in-use")) return "Ese correo ya está registrado.";
+        if(code.includes("invalid-email")) return "Correo inválido.";
+        if(code.includes("weak-password")) return "Contraseña muy débil.";
+        return "Error: " + (e.message || "intenta de nuevo.");
+      }
+    </script>
+    </body></html>
+    

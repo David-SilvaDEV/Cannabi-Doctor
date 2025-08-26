@@ -277,3 +277,27 @@ nav {
   @media (prefers-reduced-motion: reduce){
     *{ scroll-behavior: auto !important; transition: none !important; }
   }
+
+  :root{
+    --green:#1b4332; --green-2:#2d6a4f; --bg:#f5efe6; --card:#ffffff;
+    --border:#e5e7eb; --shadow:0 8px 28px rgba(2,6,23,.08);
+  }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:Poppins,system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:#111827}
+  .header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--green);color:#fff;box-shadow:var(--shadow)}
+  .header h1{font-size:1.1rem;margin:0;display:flex;gap:10px;align-items:center}
+  .wrap{min-height:100dvh;display:grid;place-items:center;padding:28px}
+  .card{width:min(440px,94%);background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:22px}
+  .card h2{margin:8px 0 14px;color:var(--green)}
+  .form{display:grid;gap:12px}
+  .input{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:10px;font-size:1rem}
+  .row{display:flex;align-items:center;gap:8px;font-size:.9rem;color:#374151}
+  .btn{width:100%;padding:12px 14px;border:none;border-radius:999px;background:var(--green);color:#fff;font-weight:700;cursor:pointer}
+  .btn:hover{background:var(--green-2)}
+  .btn-outline{background:#fff;color:var(--green);border:2px solid var(--green)}
+  .meta{margin-top:10px;text-align:center;font-size:.9rem;color:#4b5563}
+  .link{color:var(--green-2);text-decoration:none}
+  .helper{font-size:.85rem;color:#6b7280}
+  .divider{display:flex;align-items:center;gap:10px;color:#6b7280}
+  .divider::before,.divider::after{content:"";height:1px;flex:1;background:#e5e7eb}
+  
