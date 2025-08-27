@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="icon" href="/src/img/logo-canabis (1).webp" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/fonst/poppins.css" />
     <title>Cannabi Doctor</title>
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <img src="src/img/logo-canabis (1).webp" alt="logo" height="60px" width="60px" loading="lazy">
+            <img src="../../src/img/logo-canabis (1).webp" alt="logo" height="60px" width="60px" loading="lazy">
             <div class="text">
                 <h1>Cannabi Doctor</h1>
                 <h4>alivio con responsabilidad</h4>
@@ -18,17 +21,137 @@
         </div>
         <nav class="links">
             <ul>
-                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="/index.html" class="active">Inicio</a></li>
                 <li><a href="./src/views/beneficios.html">Beneficios</a></li>
+                <li><a href="./src/views/padecimientos.html">Padecimientos</a></li>
                 <li><a href="./src/views/questions.html">Preguntas</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
         <div class="container-btn-nav">
-            <div class="button_slide slide_right">INICIAR SECCION</div>
+            <a href="src/views/login.html" class="button_slide slide_right">INICIAR SESIÓN</a>
         </div>
     </header>
+
+    <section class="carrusel">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="texto">
+                <h1>Bienvenido a mi página</h1>
+                <p>Aquí puedes agregar el texto que quieras para tu banner.</p>
+                <button>Ver más</button>
+            </div>
+            <div class="imagen">
+                <img src="src/img/slide 1 (1).webp" alt="imgslide1" height="600px" width="700px" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="texto">
+                <h1>Segundo slide</h1>
+                <p>Puedes personalizar con otra descripción o información.</p>
+                <button>Conocer más</button>
+            </div>
+            <div class="imagen">
+                <img src="src/img/slide 2 (1).webp" alt="imgslide2" height="600px" width="400px" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="texto">
+                <h1>Tercer slide</h1>
+                <p>Aquí otra sección del carrusel que puedes editar.</p>
+                <button>Descubrir</button>
+            </div>
+            <div class="imagen">
+                <img src="src/img/slide 3 (1).webp" alt="imgslide3" height="700px" width="350px" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="controles">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+        </div>
+    </section>
+    <script type="module" src="./src/js/index.js"></script>
+
+    <!-- FORMAS DE USO -->
+        <section class="section section--alt">
+          <div class="container">
+            <h2 class="section__title">Formas de Uso del Cannabis Medicinal</h2>
+            <p class="section__subtitle">
+              El consumo debe hacerse bajo supervisión médica y en dosis controladas, ya que cada persona responde diferente.
+            </p>
     
+            <div class="grid-usage">
+              <article class="usage"><span>🧴</span><div><h3>Aceites y tinturas</h3><p>Fáciles de dosificar y con efectos prolongados.</p></div></article>
+              <article class="usage"><span>💊</span><div><h3>Cápsulas o comprimidos</h3><p>Ideales para quienes prefieren una dosis exacta.</p></div></article>
+              <article class="usage"><span>💨</span><div><h3>Inhaladores o vaporizadores</h3><p>Inicio rápido sin riesgos de combustión.</p></div></article>
+              <article class="usage"><span>🧴</span><div><h3>Cremas y ungüentos</h3><p>Para dolor muscular o articular localizado.</p></div></article>
+              <article class="usage"><span>🍵</span><div><h3>Infusiones</h3><p>Alternativa natural para consumo oral.</p></div></article>
+              <article class="usage"><span>🍬</span><div><h3>Gomitas medicinales</h3><p>Dosificación precisa y efectos prolongados.</p></div></article>
+            </div>
+          </div>
+        </section>
+    
+
+</div>
+
+<script>
+document.querySelector('.button_slide').addEventListener('click', function() {
+  document.getElementById('modal-login').style.display = 'block';
+});
+document.getElementById('close-login').onclick = function() {
+  document.getElementById('modal-login').style.display = 'none';
+};
+window.onclick = function(event) {
+  var modal = document.getElementById('modal-login');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+</script>
+
+<style>
+.modal-login {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(31,75,53,0.18);
+  padding: 0;
+  position: relative;
+  width: 420px;
+  max-width: 95vw;
+  min-height: 400px;
+  overflow: hidden;
+}
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 2rem;
+  color: #1f4b35;
+  cursor: pointer;
+  z-index: 10;
+}
+@media (max-width: 600px) {
+  .modal-content { width: 98vw; min-height: 350px; }
+}
+</style>
 </body>
+
 </html>
 
