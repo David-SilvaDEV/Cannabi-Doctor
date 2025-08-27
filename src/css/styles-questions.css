@@ -115,90 +115,89 @@ body {
 }
 
 
-/*===================================================================*/
 /* ===================== HEADER ===================== */
 header {
-  background-color: #F9F1E6;
-  box-shadow: 0 2px 20px var(--shadow-light);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: auto;
-  display: grid;
-  grid-template-columns: 3fr 6fr 3fr;
-  align-items: center;
-  padding: 15px 20px;
+    background-color: #F9F1E6;
+    box-shadow: 0 2px 20px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: auto;
+    display: grid;
+    grid-template-columns: 3fr 6fr 3fr;
+    align-items: center;
+    padding: 15px 20px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .logo img {
-  margin: 5px;
-  transition: transform 0.3s ease;
+    margin: 5px;
+    transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .text h1 {
-  margin-bottom: -5px;
-  color: var(--primary-color);
-  font-weight: 700;
-  font-size: 1.5rem;
+    margin-bottom: -5px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .text h4 {
-  color: var(--text-secondary);
-  font-weight: 400;
-  font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: 0.9rem;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
-  display: flex;
-  gap: 40px;
-  list-style: none;
+    display: flex;
+    gap: 40px;
+    list-style: none;
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--text-primary);
-  font-weight: 500;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  position: relative;
-  padding: 8px 0;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    position: relative;
+    padding: 8px 0;
 }
 
 nav a:hover {
-  color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 nav a.active {
-  color: var(--primary-color);
-  font-weight: 600;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 nav a.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--gradient-primary);
-  border-radius: 1px;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
 }
 
 .container-btn-nav {
@@ -208,26 +207,26 @@ nav a.active::after {
 }
 
 .button_slide {
-  color: var(--background-white);
-  border: 2px solid var(--primary-color);
-  background: var(--gradient-primary);
-  border-radius: 25px;
-  padding: 12px 24px;
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px var(--shadow-heavy);
-  transition: all 0.4s ease;
-  text-transform: uppercase;
+    color: var(--background-white);
+    border: 2px solid var(--primary-color);
+    background: var(--gradient-primary);
+    border-radius: 25px;
+    padding: 12px 24px;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--shadow-heavy);
+    transition: all 0.4s ease;
+    text-transform: uppercase;
 }
 
 .button_slide:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--shadow-heavy);
-  background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-heavy);
+    background: var(--primary-dark);
 }
 .hero {
     display: flex;
@@ -437,4 +436,11 @@ nav a.active::after {
     border: #0b2e23 1px solid;
     background-color: #fdf9f6;
 
+}
+
+/* ===================== FOCUS STATES ===================== */
+button:focus,
+a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
