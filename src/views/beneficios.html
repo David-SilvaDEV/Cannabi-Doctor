@@ -161,24 +161,81 @@
     </section>
 
         <!-- TESTIMONIOS -->
-    <section class="testimonios-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Testimonios de Nuestros Pacientes</h2>
-          <p>Historias reales de personas que encontraron alivio gracias al cannabis medicinal</p>
-        </div>
-        <div class="testimonios-grid">
-          <div class="testimonio-card">
-            <p>"Gracias al tratamiento con cannabis medicinal, mi dolor crónico ha disminuido significativamente. Ahora puedo disfrutar más tiempo con mi familia."</p>
-            <h4>- María G.</h4>
-          </div>
-          <div class="testimonio-card">
-            <p>"Después de años de insomnio, finalmente duermo mejor. Ha cambiado mi vida por completo."</p>
-            <h4>- Carlos R.</h4>
-          </div>
-        </div>
+<section class="testimonios-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Testimonios de Nuestros Pacientes</h2>
+      <p>Historias reales de personas que encontraron alivio gracias al cannabis medicinal</p>
+    </div>
+    
+    <!-- Grid de testimonios -->
+    <div class="testimonios-grid" id="testimoniosGrid">
+      <div class="testimonio-card">
+        <p>"Gracias al tratamiento con cannabis medicinal, mi dolor crónico ha disminuido significativamente. Ahora puedo disfrutar más tiempo con mi familia."</p>
+        <h4>- María G.</h4>
       </div>
-    </section>
+      <div class="testimonio-card">
+        <p>"Después de años de insomnio, finalmente duermo mejor. Ha cambiado mi vida por completo."</p>
+        <h4>- Carlos R.</h4>
+      </div>
+      <div class="testimonio-card">
+        <p>"El cannabis medicinal me ayudó a controlar mis episodios de ansiedad. Hoy me siento más tranquilo y enfocado en mi trabajo."</p>
+        <h4>- Andrés P.</h4>
+      </div>
+      <div class="testimonio-card">
+        <p>"Durante la quimioterapia, perdí el apetito y me sentía débil. Con este tratamiento pude recuperar mis fuerzas y mejorar mi alimentación."</p>
+        <h4>- Lucía F.</h4>
+      </div>
+      <div class="testimonio-card">
+        <p>"Sufro de artritis reumatoide desde hace años, y el cannabis medicinal ha reducido la inflamación en mis articulaciones."</p>
+        <h4>- Jorge L.</h4>
+      </div>
+      <div class="testimonio-card">
+        <p>"Gracias a este tratamiento, mis convulsiones por epilepsia resistente se han reducido, y mi calidad de vida ha mejorado notablemente."</p>
+        <h4>- Sofía M.</h4>
+      </div>
+    </div>
+
+    <!-- Formulario para agregar testimonios -->
+    <div class="formulario-testimonio">
+      <h3>Agrega tu Testimonio</h3>
+      <form id="formTestimonio">
+        <textarea id="mensaje" placeholder="Escribe tu testimonio aquí..." required></textarea>
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Capturar el formulario
+  const form = document.getElementById("formTestimonio");
+  const testimoniosGrid = document.getElementById("testimoniosGrid");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Evita que recargue la página
+
+    // Obtener valores
+    const mensaje = document.getElementById("mensaje").value;
+    const nombre = document.getElementById("nombre").value;
+
+    // Crear nuevo testimonio
+    const nuevoTestimonio = document.createElement("div");
+    nuevoTestimonio.classList.add("testimonio-card");
+    nuevoTestimonio.innerHTML = `
+      <p>"${mensaje}"</p>
+      <h4>- ${nombre}</h4>
+    `;
+
+    // Agregar al grid
+    testimoniosGrid.appendChild(nuevoTestimonio);
+
+    // Resetear formulario
+    form.reset();
+  });
+</script>
+
 
     <!-- FOOTER -->
     <footer>
