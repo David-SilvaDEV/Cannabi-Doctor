@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="back-button">
-            <a href="../../index .html">
+            <a href="/index.html">
                 <i class="fas fa-arrow-left"></i>
                 <span>Ir atrás</span>
             </a>
@@ -58,9 +58,9 @@
                 <!-- Options -->
                 <div class="form-options">
                     <label class="checkbox-container">
-                        <input type="checkbox" name="remember">
+                        <input type="checkbox" name="accept-terms" id="accept-terms" required>
                         <span class="checkmark"></span>
-                        Recordarme
+                        Acepto los <a href="terms.html" target="_blank">Términos y Condiciones</a>
                     </label>
                     <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 </div>
@@ -215,9 +215,12 @@
 
         // Form submission
         document.querySelector('.login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Aquí puedes agregar la lógica de autenticación
-            console.log('Formulario de login enviado');
+            const terms = document.getElementById('accept-terms');
+            if (!terms.checked) {
+                e.preventDefault();
+                alert('Debes aceptar los Términos y Condiciones para iniciar sesión.');
+            }
+            // Aquí puedes agregar la lógica de autenticación real
         });
 
         document.querySelector('.register-form').addEventListener('submit', function(e) {
