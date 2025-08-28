@@ -80,7 +80,7 @@
             <button></button>
         </div>
     </section>
-    <script type="module" src="./src/js/index.js"></script>
+    
 
     <!-- FORMAS DE USO -->
         <section class="section section--alt">
@@ -101,30 +101,21 @@
           </div>
         </section>
     
-    <!-- Modal Login -->
-<div id="modal-login" class="modal-login" style="display:none;">
-  <div class="modal-content">
-    <span class="close-modal" id="close-login">&times;</span>
-    <iframe src="src/views/login.html" frameborder="0" style="width:100%;height:600px;border-radius:16px;"></iframe>
-  </div>
-</div>
 
-<script>
-document.querySelector('.button_slide').addEventListener('click', function() {
-  document.getElementById('modal-login').style.display = 'block';
-});
-document.getElementById('close-login').onclick = function() {
-  document.getElementById('modal-login').style.display = 'none';
-};
-window.onclick = function(event) {
-  var modal = document.getElementById('modal-login');
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-};
-</script>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2025 Cannabi Doctor - Todos los derechos reservados</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
 
-</style>
+<script type="module" src="./src/js/index.js"></script>
+<script type="module" src="./src/js/nav.js"></script>
 </body>
 
 </html>
