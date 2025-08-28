@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="icon" href="/src/img/logo-canabis (1).webp" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/fonst/poppins.css" />
     <title>Cannabi Doctor</title>
 </head>
 <a href="src/views/login.html" class="btn-float-login">INICIAR SESIÓN</a>
 <body>
     <header>
         <div class="logo">
-            <img src="src/img/logo-canabis (1).webp" alt="logo" height="60px" width="60px" loading="lazy">
+            <img src="../../src/img/logo-canabis (1).webp" alt="logo" height="60px" width="60px" loading="lazy">
             <div class="text">
                 <h1>Cannabi Doctor</h1>
                 <h4>alivio con responsabilidad</h4>
@@ -22,14 +24,15 @@
         </button>
         <nav class="links">
             <ul>
-                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="/index.html" class="active">Inicio</a></li>
                 <li><a href="./src/views/beneficios.html">Beneficios</a></li>
+                <li><a href="./src/views/padecimientos.html">Padecimientos</a></li>
                 <li><a href="./src/views/questions.html">Preguntas</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
         <div class="container-btn-nav">
-            <div href="login.html" class="button_slide slide_right">INICIAR SECCION</div>
+            <a href="src/views/login.html" class="button_slide slide_right">INICIAR SESIÓN</a>
         </div>
     </header>
 
@@ -95,6 +98,7 @@
               <article class="usage"><span>🍵</span><div><h3>Infusiones</h3><p>Alternativa natural para consumo oral.</p></div></article>
               <article class="usage"><span>🍬</span><div><h3>Gomitas medicinales</h3><p>Dosificación precisa y efectos prolongados.</p></div></article>
             </div>
+          </div>
         </section>
     
 
@@ -102,11 +106,16 @@
     <footer>
       <div class="container footer-content">
         <p>&copy; 2025 Cannabi Doctor - Todos los derechos reservados</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
       </div>
     </footer>
 <script type="module" src="/src/js/nav.js"></script>
 <script type="module" src="./src/js/index.js"></script>
 
 </body>
-</html>
 
+</html>
