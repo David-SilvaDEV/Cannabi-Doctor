@@ -348,9 +348,13 @@
                 });
                 const data = await res.json();
                 if (res.ok) {
-                    alert('Login exitoso. Bienvenido ' + data.user.name);
-                    // Guardar usuario en localStorage
-                    localStorage.setItem('user', JSON.stringify(data.user));
+                    alert('Login exitoso. Bienvenido ' + data.user.name_user);
+                    // Guardar usuario en localStorage con id_user y name_user
+                    localStorage.setItem('user', JSON.stringify({
+                        id_user: data.user.id_user,
+                        name_user: data.user.name_user,
+                        email: data.user.email
+                    }));
                     // Redirigir al usuario (ejemplo: a la página principal)
                     window.location.href = '/Cannabi-Doctor/index.html';
                 } else {
@@ -363,7 +367,7 @@
 
         document.querySelector('.register-form').addEventListener('submit', async function (e) {
             e.preventDefault();
-            const name = document.getElementById('reg-name').value;
+            const name_user = document.getElementById('reg-name').value;
             const email = document.getElementById('reg-email').value;
             const password = document.getElementById('reg-password').value;
             const confirmPassword = document.getElementById('reg-confirm-password').value;
@@ -378,12 +382,12 @@
                 return;
             }
 
-            // Enviar datos al backend (nombre, email y contraseña)
+            // Enviar datos al backend (name_user, email y contraseña)
             try {
                 const res = await fetch('http://localhost:3001/api/users', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, password })
+                    body: JSON.stringify({ name_user, email, password })
                 });
                 const data = await res.json();
                 if (res.ok) {
