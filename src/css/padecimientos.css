@@ -1,0 +1,372 @@
+/* ===================== FOOTER ===================== */
+footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+/* Importar fuentes */
+@import url('../css/fonst/poppins.css');
+
+/* Variables CSS */
+:root {
+    --primary-color: #1f4b35;
+    --primary-light: #2d6a4e;
+    --primary-dark: #132c21;
+    --secondary-color: #172f2a;
+    --accent-color: #16302b;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --text-light: #95a5a6;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --border-color: #e9ecef;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-heavy: rgba(31, 75, 53, 0.2);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(22, 48, 17, 0.957) 0%, rgba(22, 48, 17, 0.957) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-light);
+}
+
+/* ===================== HEADER ===================== */
+header {
+    background-color: #F9F1E6;
+    box-shadow: 0 2px 20px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: auto;
+    display: grid;
+    grid-template-columns: 3fr 6fr 3fr;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo img {
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.text h1 {
+    margin-bottom: -5px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.text h4 {
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    position: relative;
+    padding: 8px 0;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+nav a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
+}
+
+.container-btn-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_slide {
+    color: var(--background-white);
+    border: 2px solid var(--primary-color);
+    background: var(--gradient-primary);
+    border-radius: 25px;
+    padding: 12px 24px;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--shadow-heavy);
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+}
+
+.button_slide:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-heavy);
+    background: var(--primary-dark);
+}
+/* ===================== SECCIONES ===================== */
+.wrap {
+    max-width: 1160px;
+    margin: 64px auto;
+    padding: 0 20px 64px;
+}
+
+h2.section-title {
+    margin: 0 0 28px;
+    text-align: center;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+}
+
+.card {
+    background: var(--background-white);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px var(--shadow-light);
+    padding: 22px 22px 18px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px var(--shadow-medium);
+}
+
+.icon-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent-color);
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.card h3 {
+    margin: 6px 0 6px;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.card p {
+    color: var(--text-secondary);
+    margin: 0 0 14px;
+}
+
+.benefit {
+    background: var(--background-light);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.benefit b {
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+/* seccion como ayuda el cannabi */
+.benefits-section {
+    background: var(--background-light);
+    padding: 60px 20px;
+}
+
+.benefits-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-dark);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.benefit-item span {
+    flex-shrink: 0;
+    background: var(--accent-color);
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+}
+
+.benefit-item h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+.benefit-item p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* seccion para agendar */
+.cta {
+    background: var(--gradient-primary);
+    color: #fff;
+    text-align: center;
+    padding: 48px 20px;
+    border-radius: var(--radius);
+    margin-top: 50px;
+}
+
+.cta h2 {
+    margin: 0 0 16px;
+    font-size: 24px;
+}
+
+.cta p {
+    margin: 0 0 24px;
+    font-size: 16px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cta-buttons a {
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s ease;
+}
+
+.cta-buttons .primary {
+    background: #d4a373;
+    color: #fff;
+}
+
+.cta-buttons .primary:hover {
+    background: #c68b56;
+}
+
+.cta-buttons .secondary {
+    background: #fff;
+    color: var(--primary-dark);
+}
+
+.cta-buttons .secondary:hover {
+    background: #f1f1f1;
+}
+
+/* ===================== FOCUS STATES ===================== */
+button:focus,
+a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .wrap {
+        margin: 32px auto;
+        padding-bottom: 40px;
+    }
+}
