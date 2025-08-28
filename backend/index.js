@@ -10,7 +10,7 @@ const PORT = 3001;
 // Configuración de conexión MySQL
 const db = mysql.createConnection({
   host: 'bxvgwk6qicumaj69boht-mysql.services.clever-cloud.com',
-  user: 'uwbfma1thbyigqsr tu usuario',
+  user: 'uwbfma1thbyigqsr',
   password: 'uDKWQTiowUjKbiQkiWw8',
   database: 'bxvgwk6qicumaj69boht'
 });
@@ -19,30 +19,45 @@ db.connect((err) => {
   console.log('Conectado a MySQL');
 });
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://127.0.0.1:5500',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+}));
 app.use(bodyParser.json());
 
 // --- ENDPOINTS ---
 
 // Registrar usuario con contraseña hasheada
 app.post('/api/users', async (req, res) => {
-  const { name, email, password } = req.body;
-  if (!name || !email || !password) {
+  const { name_user, email, password } = req.body;
+  console.log('Petición recibida en /api/users:', req.body);
+  if (!name_user || !email || !password) {
+    console.log('Datos faltantes');
     return res.status(400).json({ error: 'Faltan datos requeridos' });
   }
-  // Verificar si el email ya existe
-  db.query('SELECT id FROM users WHERE email = ?', [email], async (err, results) => {
-    if (err) return res.status(500).json({ error: err.message });
+  db.query('SELECT id_user FROM users WHERE email = ?', [email], async (err, results) => {
+    console.log('Resultado SELECT:', err, results);
+    if (err) {
+      console.log('Error en SELECT:', err);
+      return res.status(500).json({ error: err.message });
+    }
     if (results.length > 0) {
+      console.log('Correo ya registrado');
       return res.status(409).json({ error: 'El correo ya está registrado' });
     }
     try {
       const hash = await bcrypt.hash(password, 10);
-      db.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, hash], (err, result) => {
-        if (err) return res.status(500).json({ error: err.message });
-        res.status(201).json({ message: 'Usuario registrado', id: result.insertId });
+      console.log('Hash generado:', hash);
+      db.query('INSERT INTO users (name_user, email, password) VALUES (?, ?, ?)', [name_user, email, hash], (err, result) => {
+        console.log('Resultado INSERT:', err, result);
+        if (err) {
+          console.log('Error en INSERT:', err);
+          return res.status(500).json({ error: err.message });
+        }
+        res.status(201).json({ message: 'Usuario registrado', id_user: result.insertId });
       });
     } catch (err) {
+      console.log('Error al hashear la contraseña:', err);
       res.status(500).json({ error: 'Error al hashear la contraseña' });
     }
   });
@@ -60,7 +75,7 @@ app.post('/api/login', (req, res) => {
     const user = results[0];
     const match = await bcrypt.compare(password, user.password);
     if (!match) return res.status(401).json({ error: 'Contraseña incorrecta' });
-    res.json({ message: 'Login exitoso', user: { id: user.id, name: user.name, email: user.email } });
+    res.json({ message: 'Login exitoso', user: { id_user: user.id_user, name_user: user.name_user, email: user.email } });
   });
 });
 
