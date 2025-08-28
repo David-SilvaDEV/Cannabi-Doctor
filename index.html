@@ -7,6 +7,7 @@
     <link rel="icon" href="/src/img/logo-canabis (1).webp" type="image/x-icon">
     <title>Cannabi Doctor</title>
 </head>
+<a href="src/views/login.html" class="btn-float-login">INICIAR SESIÓN</a>
 <body>
     <header>
         <div class="logo">
@@ -16,6 +17,9 @@
                 <h4>alivio con responsabilidad</h4>
             </div>
         </div>
+        <button class="nav-toggle" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+        </button>
         <nav class="links">
             <ul>
                 <li><a href="./index.html">Inicio</a></li>
@@ -28,12 +32,54 @@
             <div href="login.html" class="button_slide slide_right">INICIAR SECCION</div>
         </div>
     </header>
+
+    <section class="carrusel">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="texto">
+                <h1>Cannabis Medicinal: Tu Bienestar</h1>
+                <p class="slide-desc">Descubre cómo el cannabis medicinal puede mejorar tu calidad de vida de forma responsable y segura. Información, asesoría y acompañamiento profesional en cada paso.</p>
+                <button>Ver más</button>
+            </div>
+            <div class="imagen">
+                <img src="src/img/slide 1 (1).webp" alt="imgslide1" height="600px" width="700px" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="texto">
+                <h1>Beneficios y Tratamientos</h1>
+                <p class="slide-desc">Conoce los beneficios terapéuticos del cannabis en el tratamiento de diversos padecimientos. Aqui te orientamos con el uso de productos.</p>
+                <button>Conocer más</button>
+            </div>
+            <div class="imagen">
+                <img src="src/img/slide 2 (1).webp" alt="imgslide2" height="600px" width="400px" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="texto">
+                <h1>Resuelve tus Dudas</h1>
+                <p class="slide-desc">Resuelve tus dudas sobre el cannabis medicinal, sus formas de uso y recomendaciones legales. Accede a recursos educativos y atención personalizada.</p>
+                <button>Descubrir</button>
+            </div>
+            <div class="imagen">
+                <img src="src/img/slide 3 (1).webp" alt="imgslide3" height="700px" width="350px" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="controles">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+        </div>
+    </section>
     
 
-    <main>
-        
-    
-        <!-- FORMAS DE USO -->
+    <!-- FORMAS DE USO -->
         <section class="section section--alt">
           <div class="container">
             <h2 class="section__title">Formas de Uso del Cannabis Medicinal</h2>
@@ -51,49 +97,20 @@
             </div>
         </section>
     
-        <!-- GOMITAS -->
-        <section class="section section--alt">
-          <div class="container gummies">
-            <h2 class="section__title">🍬 Gomitas de Cannabis Medicinal</h2>
-            <p class="section__subtitle">
-              Una de las formas más populares de consumo: práctica, discreta y con dosificación controlada.
-            </p>
-    
-            <div class="gummies__grid">
-              <!-- Usos y beneficios -->
-              <div class="panel">
-                <h3 class="panel__title">✅ Usos y beneficios</h3>
-                <ul class="list">
-                  <li>✏️ <strong>Dosis precisas y controladas</strong> — cada gomita indica miligramos de CBD/THC.</li>
-                  <li>⏱️ <strong>Efecto prolongado</strong> — liberación lenta, varias horas de alivio.</li>
-                  <li>🙂 <strong>Alivio del dolor y la ansiedad</strong> — apoyo constante.</li>
-                  <li>🍓 <strong>Variedad de sabores</strong> — experiencia agradable.</li>
-                </ul>
-              </div>
-    
-              <!-- Recomendaciones -->
-              <div class="panel panel--right">
-                <h3 class="panel__title">⚠️ Recomendaciones importantes</h3>
-    
-                <div class="tip tip--sand">
-                  <h4>⏳ Tiempo de efecto</h4>
-                  <p>Puede tardar entre 30 minutos y 2 horas en sentirse. Empezar con dosis bajas.</p>
-                </div>
-    
-                <div class="tip tip--green">
-                  <h4>🩺 Supervisión médica</h4>
-                  <p>Usarlas bajo guía profesional para evitar sobredosificación.</p>
-                </div>
-    
-                <div class="tip tip--border">
-                  <h4>🔒 Seguridad</h4>
-                  <p>Mantener fuera del alcance de niños y personas no autorizadas.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-    </main>
-    
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2025 Cannabi Doctor - Todos los derechos reservados</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+
+<script type="module" src="./src/js/index.js"></script>
+<script type="module" src="./src/js/nav.js"></script>
 </body>
 </html>
