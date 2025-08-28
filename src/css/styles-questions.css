@@ -1,3 +1,50 @@
+/* ===================== PREGUNTAS FRECUENTES ===================== */
+.questions-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.questions-item {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(31,75,53,0.08);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.questions-item[open] {
+  box-shadow: 0 4px 24px rgba(31,75,53,0.18);
+}
+.questions-item summary {
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--secondary-color);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 12px 12px 0 0;
+  transition: background 0.2s;
+  list-style: none;
+}
+.questions-item[open] summary {
+  background: var(--primary-color);
+}
+.questions-item p {
+  padding: 18px 24px;
+  background: #fff;
+  color: var(--text-primary);
+  font-size: 1rem;
+  border-radius: 0 0 12px 12px;
+  margin: 0;
+  transition: max-height 0.3s ease;
+}
 /* ===================== FOOTER ===================== */
 footer {
   background: var(--secondary-color);
