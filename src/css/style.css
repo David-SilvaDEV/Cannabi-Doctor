@@ -90,7 +90,7 @@ header {
     z-index: 1000;
     width: 100%;
     display: grid;
-    grid-template-columns: 3fr 6fr 3fr;
+    grid-template-columns: 3fr 7fr 2fr;
     align-items: center;
     padding: clamp(10px, 2vw, 20px);
     transition: padding 0.3s ease;
@@ -456,7 +456,7 @@ a:focus {
 /* Media Queries Responsive */
 @media (max-width: 1215px) {
     header {
-        grid-template-columns: 2fr 7fr 3fr;
+        grid-template-columns: 1fr 7fr 2fr;
     }
     .text h1, .text h4 {
         opacity: 0;
