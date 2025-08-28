@@ -193,17 +193,40 @@ body {
 
 /* ===================== FOOTER ===================== */
 footer {
-  background-color: var(--primary-color);
+  background: var(--secondary-color);
   color: white;
+  padding: 30px 0;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
-footer p {
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-content p {
   margin: 0;
   font-size: 0.9rem;
-  color: var(--beige-medium);
+  opacity: 0.8;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
 }
 
 /* ===================== RESPONSIVE ===================== */
@@ -228,10 +251,10 @@ footer p {
     font-size: 2rem;
   }
   
-  .terms-content {
-    padding: 25px 20px;
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    margin: 0;
   }
-  
   .terms-section {
     margin-bottom: 25px;
     padding-bottom: 20px;

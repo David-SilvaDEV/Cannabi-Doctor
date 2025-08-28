@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="icon" href="/src/img/logo-canabis (1).webp" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <header class="login-header">
         <div class="login-brand">
@@ -65,18 +67,18 @@
                     <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 </div>
 
-                            <!-- Login Button -->
-            <button type="submit" class="login-btn">Iniciar Sesión</button>
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
 
-            <!-- Register Link -->
-            <div class="register-link">
-                <p>¿No tienes cuenta? <a href="#" onclick="toggleForms()">Regístrate</a></p>
-            </div>
+                <!-- Register Link -->
+                <div class="register-link">
+                    <p>¿No tienes cuenta? <a href="#" onclick="toggleForms()">Regístrate</a></p>
+                </div>
 
-            <!-- Separator -->
-            <div class="separator">
-                <span>O continúa con</span>
-            </div>
+                <!-- Separator -->
+                <div class="separator">
+                    <span>O continúa con</span>
+                </div>
 
                 <!-- Social Login -->
                 <div class="social-login">
@@ -147,7 +149,7 @@
         function togglePassword() {
             const passwordInput = document.getElementById('password');
             const toggleBtn = document.querySelector('.password-toggle i');
-            
+
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
                 toggleBtn.classList.remove('fa-eye');
@@ -162,7 +164,7 @@
         function toggleRegPassword() {
             const passwordInput = document.getElementById('reg-password');
             const toggleBtn = document.querySelector('#reg-password').nextElementSibling.querySelector('i');
-            
+
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
                 toggleBtn.classList.remove('fa-eye');
@@ -177,7 +179,7 @@
         function toggleRegConfirmPassword() {
             const passwordInput = document.getElementById('reg-confirm-password');
             const toggleBtn = document.querySelector('#reg-confirm-password').nextElementSibling.querySelector('i');
-            
+
             if (passwordInput.type === 'password') {
                 passwordInput.type = 'text';
                 toggleBtn.classList.remove('fa-eye');
@@ -195,7 +197,7 @@
             const loginTitle = document.querySelector('.login-title');
             const loginSubtitle = document.querySelector('.login-subtitle');
             const userIcon = document.querySelector('.user-icon i');
-            
+
             if (loginForm.style.display === 'none') {
                 // Mostrar login
                 loginForm.style.display = 'block';
@@ -214,7 +216,7 @@
         }
 
         // Form submission
-        document.querySelector('.login-form').addEventListener('submit', async function(e) {
+        document.querySelector('.login-form').addEventListener('submit', async function (e) {
             e.preventDefault();
             const terms = document.getElementById('accept-terms');
             if (!terms.checked) {
@@ -244,7 +246,7 @@
             }
         });
 
-        document.querySelector('.register-form').addEventListener('submit', async function(e) {
+        document.querySelector('.register-form').addEventListener('submit', async function (e) {
             e.preventDefault();
             const name = document.getElementById('reg-name').value;
             const email = document.getElementById('reg-email').value;
@@ -280,5 +282,11 @@
             }
         });
     </script>
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 Cannabi Doctor - Todos los derechos reservados</p>
+        </div>
+    </footer>
 </body>
+
 </html>
