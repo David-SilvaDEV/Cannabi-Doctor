@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="src/css/fonst/poppins.css" />
     <title>Cannabi Doctor</title>
 </head>
-
+<a href="src/views/login.html" class="btn-float-login">INICIAR SESIÓN</a>
 <body>
     <header>
         <div class="logo">
@@ -19,6 +19,9 @@
                 <h4>alivio con responsabilidad</h4>
             </div>
         </div>
+        <button class="nav-toggle" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+        </button>
         <nav class="links">
             <ul>
                 <li><a href="/index.html" class="active">Inicio</a></li>
@@ -37,8 +40,8 @@
         <!-- Slide 1 -->
         <div class="slide active">
             <div class="texto">
-                <h1>Bienvenido a mi página</h1>
-                <p>Aquí puedes agregar el texto que quieras para tu banner.</p>
+                <h1>Cannabis Medicinal: Tu Bienestar</h1>
+                <p class="slide-desc">Descubre cómo el cannabis medicinal puede mejorar tu calidad de vida de forma responsable y segura. Información, asesoría y acompañamiento profesional en cada paso.</p>
                 <button>Ver más</button>
             </div>
             <div class="imagen">
@@ -49,8 +52,8 @@
         <!-- Slide 2 -->
         <div class="slide">
             <div class="texto">
-                <h1>Segundo slide</h1>
-                <p>Puedes personalizar con otra descripción o información.</p>
+                <h1>Beneficios y Tratamientos</h1>
+                <p class="slide-desc">Conoce los beneficios terapéuticos del cannabis en el tratamiento de diversos padecimientos. Aqui te orientamos con el uso de productos.</p>
                 <button>Conocer más</button>
             </div>
             <div class="imagen">
@@ -61,8 +64,8 @@
         <!-- Slide 3 -->
         <div class="slide">
             <div class="texto">
-                <h1>Tercer slide</h1>
-                <p>Aquí otra sección del carrusel que puedes editar.</p>
+                <h1>Resuelve tus Dudas</h1>
+                <p class="slide-desc">Resuelve tus dudas sobre el cannabis medicinal, sus formas de uso y recomendaciones legales. Accede a recursos educativos y atención personalizada.</p>
                 <button>Descubrir</button>
             </div>
             <div class="imagen">
@@ -77,7 +80,7 @@
             <button></button>
         </div>
     </section>
-    <script type="module" src="./src/js/index.js"></script>
+    
 
     <!-- FORMAS DE USO -->
         <section class="section section--alt">
@@ -99,58 +102,20 @@
         </section>
     
 
-</div>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2025 Cannabi Doctor - Todos los derechos reservados</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </footer>
 
-<script>
-document.querySelector('.button_slide').addEventListener('click', function() {
-  document.getElementById('modal-login').style.display = 'block';
-});
-document.getElementById('close-login').onclick = function() {
-  document.getElementById('modal-login').style.display = 'none';
-};
-window.onclick = function(event) {
-  var modal = document.getElementById('modal-login');
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-};
-</script>
-
-<style>
-.modal-login {
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.modal-content {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 8px 40px rgba(31,75,53,0.18);
-  padding: 0;
-  position: relative;
-  width: 420px;
-  max-width: 95vw;
-  min-height: 400px;
-  overflow: hidden;
-}
-.close-modal {
-  position: absolute;
-  top: 12px;
-  right: 18px;
-  font-size: 2rem;
-  color: #1f4b35;
-  cursor: pointer;
-  z-index: 10;
-}
-@media (max-width: 600px) {
-  .modal-content { width: 98vw; min-height: 350px; }
-}
-</style>
+<script type="module" src="./src/js/index.js"></script>
+<script type="module" src="./src/js/nav.js"></script>
 </body>
 
 </html>
