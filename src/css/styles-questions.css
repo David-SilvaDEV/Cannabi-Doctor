@@ -79,7 +79,6 @@ body {
   margin: 0 auto;
   text-align: center;
   color: #16302b;
-  font-family: "Poppins", sans-serif;
   
 }
 
@@ -159,23 +158,28 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: auto;
+    width: 100%;
     display: grid;
-    grid-template-columns: 3fr 6fr 3fr;
+    grid-template-columns: 2fr auto 4fr;
     align-items: center;
-    padding: 15px 20px;
+    padding: clamp(10px, 2vw, 20px);
+    transition: padding 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
+    justify-content: flex-start;
+    gap: clamp(10px, 2vw, 15px);
+    padding-left: clamp(10px, 2vw, 20px);
 }
 
 .logo img {
-    margin: 5px;
-    transition: transform 0.3s ease;
+    width: clamp(40px, 8vw, 60px);
+    height: auto;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo img:hover {
@@ -183,47 +187,62 @@ header {
 }
 
 .text h1 {
-    margin-bottom: -5px;
+    margin-bottom: clamp(-5px, -1vw, -3px);
     color: var(--primary-color);
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .text h4 {
     color: var(--text-secondary);
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
 nav ul {
     display: flex;
-    gap: 40px;
+    gap: clamp(20px, 4vw, 40px);
     list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav a {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 500;
-    transition: all 0.3s ease;
-    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     position: relative;
-    padding: 8px 0;
+    padding: 8px 12px;
+    border-radius: 8px;
 }
 
 nav a:hover {
     color: var(--secondary-color);
+    background: rgba(31, 75, 53, 0.05);
 }
 
 nav a.active {
     color: var(--primary-color);
     font-weight: 600;
+    background: rgba(31, 75, 53, 0.1);
 }
 
 nav a.active::after {
@@ -238,9 +257,9 @@ nav a.active::after {
 }
 
 .container-btn-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button_slide {
@@ -248,30 +267,37 @@ nav a.active::after {
     border: 2px solid var(--primary-color);
     background: var(--gradient-primary);
     border-radius: 25px;
-    padding: 12px 24px;
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(12px, 1.5vw, 14px);
     font-weight: 600;
     letter-spacing: 0.5px;
     cursor: pointer;
     box-shadow: 0 4px 15px var(--shadow-heavy);
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
+    white-space: nowrap;
+    min-width: max-content;
 }
 
 .button_slide:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px var(--shadow-heavy);
     background: var(--primary-dark);
+    border-color: var(--primary-dark);
 }
+
+
+
 .hero {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
     gap: 2rem;
     text-align:start;
-    font-family: "Poppins", sans-serif;
   }
   
   .hero-text {
@@ -282,7 +308,6 @@ nav a.active::after {
     font-size: 2.2rem;
     color:#16302b;
     margin-bottom: 1rem;
-    
   }
   
   .hero-text p {
@@ -343,29 +368,22 @@ nav a.active::after {
   margin: 3rem auto;
   padding: 0;
   background: transparent;
-
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  
+  font-family: 'Inter', sans-serif;
  
   
-
 }
 
 /* Título */
 .ask h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  color:#16302b;
+  color: #1a1a1a;
   margin-bottom: 0.5rem;
   text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  
 }
 
 .ask p {
-  color:#16302b;
+  color: #555;
   margin-bottom: 2rem;
   font-size: 1rem;
   text-align: center;
@@ -381,7 +399,6 @@ nav a.active::after {
   flex-direction: column;
   gap: 1.5rem;
   border: 1px solid #f0ece6;
-  
 }
 
 /* Grid para nombre y email */
@@ -401,7 +418,6 @@ nav a.active::after {
   color: #333;
   margin-bottom: 0.5rem;
   font-weight: 500;
-  
 }
 
 .field input,
@@ -416,19 +432,17 @@ nav a.active::after {
   color: #333;
   outline: none;
   transition: box-shadow 0.2s ease;
-  
 }
 
 .field input::placeholder,
 .field textarea::placeholder {
- color: #b3aead;
- font-family: "Poppins", sans-serif;
+  color: #b3aead;
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
-  box-shadow: 0 0 0 2px rgb(35, 119, 83);
+  box-shadow: 0 0 0 2px rgba(13, 97, 61, 0.3);
 }
 
 /* Footer */
@@ -460,7 +474,7 @@ nav a.active::after {
 }
 
 .btn-primary {
-  background:#16302b;/* verde oscuro */
+  background: #16302b;/* verde oscuro */
   color: #fff;
 }
 
