@@ -103,37 +103,41 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       
   
-    botones.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const producto = btn.getAttribute("data-producto");
-        modalTitle.textContent = `Tiendas disponibles para ${producto}`;
-        modalBody.innerHTML = "";
-  
-        if (dataTiendas[producto]) {
-          dataTiendas[producto].forEach(tienda => {
-            modalBody.innerHTML += `
-              <div class="tienda">
-                <p><strong>${tienda.nombre}</strong></p>
-                <p>Precio: ${tienda.precio}</p>
-                <a href="${tienda.link}" target="_blank" class="contactar">Contactar</a>
-              </div>
-            `;
-          });
-        }
-  
-        modal.style.display = "block";
+      botones.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const producto = btn.getAttribute("data-producto");
+          modalTitle.textContent = `Tiendas disponibles para ${producto}`;
+          modalBody.innerHTML = "";
+    
+          if (dataTiendas[producto]) {
+            dataTiendas[producto].forEach(tienda => {
+              modalBody.innerHTML += `
+                <div class="tienda">
+                  <p><strong>${tienda.nombre}</strong></p>
+                  <p>Precio: ${tienda.precio}</p>
+                  <a href="${tienda.link}" target="_blank" class="contactar">Contactar</a>
+                </div>
+              `;
+            });
+          } else {
+            modalBody.innerHTML = `<p>No hay tiendas registradas para este producto.</p>`;
+          }
+    
+          // Mostrar modal centrado
+          modal.classList.add("show");
+        });
       });
-    });
-  
-    // Cerrar modal
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-  
-    window.addEventListener("click", (e) => {
-      if (e.target == modal) {
-        modal.style.display = "none";
-      }
-    });
+    
+      // 🔥 Cerrar modal con la X
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("show");
+      });
+    
+      // 🔥 Cerrar modal haciendo click fuera
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("show");
+        }
+      });
   });
   

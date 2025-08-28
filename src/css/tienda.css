@@ -1,0 +1,434 @@
+/* 🎯 TIENDA.CSS */
+
+/* Importar fuentes */
+@import url('../css/fonst/poppins.css');
+
+/* Variables CSS */
+:root {
+    --primary-color: #1f4b35;
+    --primary-light: #2d6a4e;
+    --primary-dark: #132c21;
+    --secondary-color: #172f2a;
+    --accent-color: #8BC34A;
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --text-light: #95a5a6;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --border-color: #e9ecef;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-heavy: rgba(31, 75, 53, 0.2);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(22, 48, 17, 0.957) 0%, rgba(22, 48, 17, 0.957) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================== HEADER ===================== */
+/* HEADER */
+header {
+    background-color: #F9F1E6;
+    box-shadow: 0 2px 20px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .logo img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .text h1 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .text h4 {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: var(--primary-color);
+    background: #16302b8e;
+  }
+  
+  nav a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  .container-btn-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button_slide {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px var(--shadow-light);
+    transition: all 0.3s ease;
+  }
+  
+  .button_slide:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+
+
+/* HERO */
+.hero-tienda {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #A38560,#d5d808c9,#A38560,#d5d808);
+    border-bottom: 2px solid #16302B;
+  }
+  
+  .hero-tienda h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #16302b;
+  }
+  
+  .hero-tienda p {
+    color: #16302bfd;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-tienda .badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .hero-tienda .badges span {
+    background: #fff;
+    border: 1px solid #16302b;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #16302b;
+  }
+  
+  /* FILTROS */
+  .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    max-width: 1200px;
+  }
+  
+  .filtros input,
+  .filtros select,
+  .filtros button {
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .filtros button {
+    background: #16302b;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .filtros button:hover {
+    background: #16302bd4;
+  }
+  
+  /* GRID PRODUCTOS */
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: auto;
+  }
+  
+  .producto {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px #16302b;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px #A38560;
+  }
+  
+  .producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  .producto h3 {
+    margin: 0.8rem 0 0.3rem;
+    font-size: 1.2rem;
+    color: #16302b;
+  }
+  
+  .producto p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .producto .precio {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #1b5e20;
+  }
+  
+  .producto .rating {
+    color: #ffb400;
+    font-size: 0.9rem;
+  }
+  
+  .btn-ver-tienda {
+    margin-top: 0.8rem;
+    background: #16302B;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-ver-tienda:hover {
+    background: #A38560;
+  }
+  
+  /* MODAL */
+  .modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+  
+    /* Centramos con Flex */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex; /* Se activa al abrir */
+  }
+  
+  
+  
+  .modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .modal-content h4 {
+    margin-bottom: 1rem;
+    color: #16302B
+  }
+  
+  .modal-content .close {
+    position: absolute;
+    top: 15px; right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #df0a0a;
+  }
+  
+  #modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  #modal-body a {
+    display: block;
+    background: #16302B;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  #modal-body a:hover {
+    background: #A38560;
+  }
+  
+  /* =========================
+   ESTILOS FOOTER
+========================= */
+.footer {
+    background: #16302B; /* Fondo negro elegante */
+    color: #ddd; /* Texto claro */
+    padding: 50px 20px 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footer .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Columna */
+  .footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #00c853; /* Verde medicinal */
+    position: relative;
+  }
+  
+  .footer-col h4::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: #00c853;
+    left: 0;
+    bottom: -5px;
+  }
+  
+  /* Logo + descripción */
+  .logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-footer img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logo-footer h3 {
+    color: #fff;
+    font-size: 22px;
+  }
+  
+  /* Listas */
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-col ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .footer-col ul li a:hover {
+    color: #00c853;
+    padding-left: 5px;
+  }
+  
+  /* Contacto */
+  .footer-col .contacto li {
+    margin-bottom: 8px;
+    color: #ccc;
+  }
+  
+  /* Copyright */
+  .copy {
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #777;
+  }
+  
