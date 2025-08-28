@@ -582,6 +582,43 @@ nav a.active::after {
         cursor: pointer;
         padding: 8px;
     }
+    
+    .hamburger {
+        width: 28px;
+        height: 3px;
+        background: var(--primary-color);
+        display: block;
+        position: relative;
+        border-radius: 2px;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 28px;
+        height: 3px;
+        background: var(--primary-color);
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    .hamburger::before { top: -8px; }
+    .hamburger::after { top: 8px; }
+
+    .nav-toggle.open .hamburger {
+        background: transparent;
+    }
+
+    .nav-toggle.open .hamburger::before {
+        transform: rotate(45deg) translate(5px,5px);
+    }
+
+    .nav-toggle.open .hamburger::after {
+        transform: rotate(-45deg) translate(5px,-5px);
+    }
+
     nav.links {
         position: fixed;
         top: 0;
@@ -664,13 +701,6 @@ nav a.active::after {
 /* ===================== SCROLL SMOOTH ===================== */
 html {
   scroll-behavior: smooth;
-}
-
-/* ===================== FOCUS STATES ===================== */
-button:focus,
-a:focus {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
 }
 
 /* ===================== LOADING STATES ===================== */
