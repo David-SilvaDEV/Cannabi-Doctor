@@ -143,18 +143,18 @@ header {
 .hero-tienda {
     text-align: center;
     padding: 3rem 1rem;
-    background: linear-gradient(135deg, #A38560,#d5d808c9,#A38560,#d5d808);
-    border-bottom: 2px solid #16302B;
+    background: #16302B;
+    border-bottom: 2px solid #408663;
   }
   
   .hero-tienda h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: #16302b;
+    color: #F9F1E6;
   }
   
   .hero-tienda p {
-    color: #16302bfd;
+    color: #F9F1E6;
     margin-bottom: 1rem;
   }
   
@@ -167,7 +167,7 @@ header {
   
   .hero-tienda .badges span {
     background: #fff;
-    border: 1px solid #16302b;
+    border: 1px solid #F9F1E6;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
