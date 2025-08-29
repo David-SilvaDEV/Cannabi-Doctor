@@ -151,10 +151,15 @@
             loginBtnHeader.style.display = 'inline-block';
             logoutBtnHeader.style.display = 'none';
         }
-        logoutBtn.addEventListener('click', function() {
-            localStorage.removeItem('user');
-            window.location.reload();
-        });
+            function cerrarSesion() {
+                localStorage.clear();
+                loginBtn.style.display = 'inline-block';
+                logoutBtn.style.display = 'none';
+                loginBtnHeader.style.display = 'inline-block';
+                logoutBtnHeader.style.display = 'none';
+            }
+            logoutBtn.addEventListener('click', cerrarSesion);
+            logoutBtnHeader.addEventListener('click', cerrarSesion);
         logoutBtnHeader.addEventListener('click', function() {
             localStorage.removeItem('user');
             window.location.reload();

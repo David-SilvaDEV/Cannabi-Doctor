@@ -354,6 +354,9 @@
                         name_user: data.user.name_user,
                         email: data.user.email
                     }));
+                    localStorage.setItem('id_user', data.user.id_user);
+                    localStorage.setItem('username', data.user.name_user);
+                    localStorage.setItem('isLoggedIn', 'true');
                     // Redirigir al usuario al inicio
                     window.location.href = '/index.html';
                 } else {

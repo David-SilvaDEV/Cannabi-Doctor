@@ -8,15 +8,22 @@ const app = express();
 const PORT = 3001;
 
 // Configuración de conexión MySQL
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: 'bxvgwk6qicumaj69boht-mysql.services.clever-cloud.com',
   user: 'uwbfma1thbyigqsr',
   password: 'uDKWQTiowUjKbiQkiWw8',
-  database: 'bxvgwk6qicumaj69boht'
+  database: 'bxvgwk6qicumaj69boht',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
-db.connect((err) => {
-  if (err) throw err;
-  console.log('Conectado a MySQL');
+db.getConnection((err, connection) => {
+  if (err) {
+    console.error('Error de conexión MySQL:', err);
+    process.exit(1);
+  }
+  console.log('Conectado a MySQL (pool)');
+  connection.release();
 });
 
 app.use(cors({
@@ -37,7 +44,7 @@ app.post('/api/comments', (req, res) => {
   if (!id_user || !comentario) {
     return res.status(400).json({ error: 'Faltan datos requeridos' });
   }
-  db.query('INSERT INTO comments (id_user, comentario) VALUES (?, ?)', [id_user, comentario], (err, result) => {
+  db.query('INSERT INTO comments (id_user, comment_text) VALUES (?, ?)', [id_user, comentario], (err, result) => {
     if (err) return res.status(500).json({ error: err.message });
     res.status(201).json({ message: 'Comentario guardado', id: result.insertId });
   });
