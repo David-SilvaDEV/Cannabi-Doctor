@@ -209,6 +209,31 @@
             <small class="muted">Al enviar aceptas nuestro aviso de uso informativo. No sustituye consejo
               médico.</small>
             <button type="submit" class="btn btn-primary">+ Enviar pregunta</button>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const textarea = document.getElementById('question');
+        const submitBtn = document.querySelector('button[type="submit"]');
+        // Simulación de sesión (reemplaza por tu lógica real)
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        if (!isLoggedIn) {
+          textarea.disabled = true;
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Inicia sesión para preguntar';
+          submitBtn.classList.add('btn-disabled');
+          submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'login.html';
+          });
+        }
+        form.addEventListener('submit', function(e) {
+          if (!isLoggedIn) {
+            e.preventDefault();
+            return;
+          }
+        });
+      });
+    </script>
           </div>
           </form>
         </div>
