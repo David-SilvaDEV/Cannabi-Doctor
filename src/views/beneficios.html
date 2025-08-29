@@ -214,13 +214,35 @@
   // Capturar el formulario
   const form = document.getElementById("formTestimonio");
   const testimoniosGrid = document.getElementById("testimoniosGrid");
+  const textarea = document.getElementById("mensaje");
+  const nombreInput = document.getElementById("nombre");
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  // Simulación de sesión (reemplaza por tu lógica real)
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+  if (!isLoggedIn) {
+    textarea.disabled = true;
+    nombreInput.disabled = true;
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Inicia sesión para comentar';
+    submitBtn.classList.add('btn-disabled');
+    submitBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'login.html';
+    });
+  }
 
   form.addEventListener("submit", function (e) {
+    if (!isLoggedIn) {
+      e.preventDefault();
+      return;
+    }
     e.preventDefault(); // Evita que recargue la página
 
     // Obtener valores
-    const mensaje = document.getElementById("mensaje").value;
-    const nombre = document.getElementById("nombre").value;
+    const mensaje = textarea.value;
+    const nombre = nombreInput.value;
 
     // Crear nuevo testimonio
     const nuevoTestimonio = document.createElement("div");
