@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estilos de la familia Poppins */
+
+/* Ultra delgada: ideal para efectos sutiles, marcas de agua, textos secundarios */
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Extra ligera: se puede usar en subtítulos discretos o descripciones pequeñas */
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Ligera: buena para párrafos largos, ya que es legible pero suave */
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Regular: la más común, perfecta para párrafos, menús o texto de cuerpo */
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Medium: resalta un poco más, ideal para subtítulos o botones */
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Semibold: excelente para títulos de secciones o elementos destacados del nav */
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Bold: muy usado en encabezados principales y títulos llamativos */
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Extra bold: perfecto para títulos grandes tipo banner o hero section */
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Black: el más pesado, ideal para destacar logotipos, títulos grandes o slogans */
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Versiones en cursiva (italic) */
+
+/* Ultra delgada cursiva: decorativo o frases de apoyo */
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Extra ligera cursiva: citas cortas o descripciones suaves */
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Ligera cursiva: buena para notas al pie o texto alternativo */
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Regular cursiva: usada en párrafos con énfasis o citas */
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Medium cursiva: botones destacados o subtítulos con estilo */
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Semibold cursiva: títulos secundarios con un toque dinámico */
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Bold cursiva: encabezados importantes con énfasis */
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Extra bold cursiva: ideal para títulos grandes y llamativos con estilo */
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Black cursiva: usado para slogans potentes o títulos de portada */
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
