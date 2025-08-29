@@ -348,15 +348,14 @@
                 });
                 const data = await res.json();
                 if (res.ok) {
-                    alert('Login exitoso. Bienvenido ' + data.user.name_user);
                     // Guardar usuario en localStorage con id_user y name_user
                     localStorage.setItem('user', JSON.stringify({
                         id_user: data.user.id_user,
                         name_user: data.user.name_user,
                         email: data.user.email
                     }));
-                    // Redirigir al usuario (ejemplo: a la página principal)
-                    window.location.href = '/Cannabi-Doctor/index.html';
+                    // Redirigir al usuario al inicio
+                    window.location.href = '/index.html';
                 } else {
                     alert('Error: ' + (data.error || 'No se pudo iniciar sesión.'));
                 }
