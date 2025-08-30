@@ -8,30 +8,61 @@ const app = express();
 const PORT = 3001;
 
 // Configuración de conexión MySQL
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: 'bxvgwk6qicumaj69boht-mysql.services.clever-cloud.com',
   user: 'uwbfma1thbyigqsr',
   password: 'uDKWQTiowUjKbiQkiWw8',
-  database: 'bxvgwk6qicumaj69boht'
+  database: 'bxvgwk6qicumaj69boht',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
-db.connect((err) => {
-  if (err) throw err;
-  console.log('Conectado a MySQL');
+db.getConnection((err, connection) => {
+  if (err) {
+    console.error('Error de conexión MySQL:', err);
+    process.exit(1);
+  }
+  console.log('Conectado a MySQL (pool)');
+  connection.release();
 });
 
 app.use(cors({
-  origin: 'http://127.0.0.1:5500',
+  origin: [
+    'http://127.0.0.1:5500',
+    'http://127.0.0.1:5501',
+    'http://localhost:5500',
+    'http://localhost:5501'
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 app.use(bodyParser.json());
 
 // --- ENDPOINTS ---
+// Guardar comentario
+app.post('/api/comments', (req, res) => {
+  const { id_user, comentario } = req.body;
+  if (!id_user || !comentario) {
+    return res.status(400).json({ error: 'Faltan datos requeridos' });
+  }
+  db.query('INSERT INTO comments (id_user, comment_text) VALUES (?, ?)', [id_user, comentario], (err, result) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.status(201).json({ message: 'Comentario guardado', id: result.insertId });
+  });
+});
+
+// Listar comentarios
+app.get('/api/comments', (req, res) => {
+  db.query('SELECT comments.*, users.name_user, users.lastname_user FROM comments JOIN users ON comments.id_user = users.id_user', (err, results) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(results);
+  });
+});
 
 // Registrar usuario con contraseña hasheada
 app.post('/api/users', async (req, res) => {
-  const { name_user, email, password } = req.body;
+  const { name_user, lastname_user, email, password } = req.body;
   console.log('Petición recibida en /api/users:', req.body);
-  if (!name_user || !email || !password) {
+  if (!name_user || !lastname_user || !email || !password) {
     console.log('Datos faltantes');
     return res.status(400).json({ error: 'Faltan datos requeridos' });
   }
@@ -48,7 +79,7 @@ app.post('/api/users', async (req, res) => {
     try {
       const hash = await bcrypt.hash(password, 10);
       console.log('Hash generado:', hash);
-      db.query('INSERT INTO users (name_user, email, password) VALUES (?, ?, ?)', [name_user, email, hash], (err, result) => {
+      db.query('INSERT INTO users (name_user, lastname_user, email, password) VALUES (?, ?, ?, ?)', [name_user, lastname_user, email, hash], (err, result) => {
         console.log('Resultado INSERT:', err, result);
         if (err) {
           console.log('Error en INSERT:', err);

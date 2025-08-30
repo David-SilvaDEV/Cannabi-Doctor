@@ -211,6 +211,24 @@
 </section>
 
 <script>
+  // Mostrar comentarios guardados en la base de datos
+  function cargarComentarios() {
+    fetch('http://localhost:3001/api/comments')
+      .then(res => res.json())
+      .then(comentarios => {
+        testimoniosGrid.innerHTML = '';
+        comentarios.forEach(com => {
+          const card = document.createElement('div');
+          card.classList.add('testimonio-card');
+          card.innerHTML = `<p>"${com.comment_text}"</p><h4>- ${com.name_user} ${com.lastname_user || ''}</h4>`;
+          testimoniosGrid.appendChild(card);
+        });
+      })
+      .catch(err => {
+        console.error('Error al cargar comentarios:', err);
+      });
+  }
+  cargarComentarios();
   // Capturar el formulario
   const form = document.getElementById("formTestimonio");
   const testimoniosGrid = document.getElementById("testimoniosGrid");
@@ -218,46 +236,72 @@
   const nombreInput = document.getElementById("nombre");
   const submitBtn = form.querySelector('button[type="submit"]');
 
-  // Simulación de sesión (reemplaza por tu lógica real)
-  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-  if (!isLoggedIn) {
-    textarea.disabled = true;
-    nombreInput.disabled = true;
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Inicia sesión para comentar';
-    submitBtn.classList.add('btn-disabled');
-    submitBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.location.href = 'login.html';
-    });
-  }
-
-  form.addEventListener("submit", function (e) {
+  function actualizarFormularioComentario() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     if (!isLoggedIn) {
-      e.preventDefault();
-      return;
+      textarea.disabled = true;
+      nombreInput.disabled = true;
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Inicia sesión para comentar';
+      submitBtn.classList.add('btn-disabled');
+      submitBtn.onclick = function(e) {
+        e.preventDefault();
+        window.location.href = 'login.html';
+      };
+    } else {
+      textarea.disabled = false;
+      nombreInput.disabled = false;
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar';
+      submitBtn.classList.remove('btn-disabled');
+      submitBtn.onclick = null;
     }
-    e.preventDefault(); // Evita que recargue la página
+  }
+  actualizarFormularioComentario();
+  window.addEventListener('storage', actualizarFormularioComentario);
 
-    // Obtener valores
-    const mensaje = textarea.value;
-    const nombre = nombreInput.value;
+    form.addEventListener("submit", function (e) {
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      if (!isLoggedIn) {
+        e.preventDefault();
+        return;
+      }
+      e.preventDefault(); // Evita que recargue la página
 
-    // Crear nuevo testimonio
-    const nuevoTestimonio = document.createElement("div");
-    nuevoTestimonio.classList.add("testimonio-card");
-    nuevoTestimonio.innerHTML = `
-      <p>"${mensaje}"</p>
-      <h4>- ${nombre}</h4>
-    `;
+      // Obtener valores
+      const mensaje = textarea.value;
+      const nombre = nombreInput.value;
+      const idUser = localStorage.getItem('id_user');
+      if (!idUser) {
+        alert('No se encontró el id del usuario.');
+        return;
+      }
 
-    // Agregar al grid
-    testimoniosGrid.appendChild(nuevoTestimonio);
-
-    // Resetear formulario
-    form.reset();
-  });
+      // Enviar el comentario al backend
+      fetch('http://localhost:3001/api/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id_user: idUser,
+          comentario: mensaje
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) {
+          alert('Error al guardar el comentario: ' + data.error);
+          return;
+        }
+    // Actualizar la lista de comentarios automáticamente
+    cargarComentarios();
+    textarea.value = '';
+      })
+      .catch(err => {
+        alert('Error de conexión: ' + err);
+      });
+    });
 </script>
 
 
