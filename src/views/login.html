@@ -96,8 +96,12 @@
             <!-- Register Form (Hidden by default) -->
             <form class="register-form" style="display: none;">
                 <div class="form-group">
-                    <label for="reg-name">Nombre Completo</label>
-                    <input type="text" id="reg-name" name="name" placeholder="Tu nombre completo" required>
+                    <label for="reg-name">Nombre</label>
+                    <input type="text" id="reg-name" name="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-lastname">Apellido</label>
+                    <input type="text" id="reg-lastname" name="lastname" placeholder="Tu apellido" required>
                 </div>
 
                 <div class="form-group">
@@ -370,6 +374,7 @@
         document.querySelector('.register-form').addEventListener('submit', async function (e) {
             e.preventDefault();
             const name_user = document.getElementById('reg-name').value;
+            const lastname_user = document.getElementById('reg-lastname').value;
             const email = document.getElementById('reg-email').value;
             const password = document.getElementById('reg-password').value;
             const confirmPassword = document.getElementById('reg-confirm-password').value;
@@ -384,12 +389,12 @@
                 return;
             }
 
-            // Enviar datos al backend (name_user, email y contraseña)
+            // Enviar datos al backend (name_user, lastname_user, email y contraseña)
             try {
                 const res = await fetch('http://localhost:3001/api/users', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name_user, email, password })
+                    body: JSON.stringify({ name_user, lastname_user, email, password })
                 });
                 const data = await res.json();
                 if (res.ok) {
