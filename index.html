@@ -9,27 +9,8 @@
     <link rel="stylesheet" href="src/css/fonst/poppins.css" />
     <title>Cannabi Doctor</title>
 </head>
-<a href="src/views/login.html" class="btn-float-login" id="login-btn">INICIAR SESIÓN</a>
-<button id="logout-btn" class="btn-float-login" style="display:none;">CERRAR SESIÓN</button>
+<a href="src/views/login.html" class="btn-float-login">INICIAR SESIÓN</a>
 <body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const loginBtn = document.getElementById('login-btn');
-        const logoutBtn = document.getElementById('logout-btn');
-        const user = localStorage.getItem('user');
-        if (user) {
-            loginBtn.style.display = 'none';
-            logoutBtn.style.display = 'inline-block';
-        } else {
-            loginBtn.style.display = 'inline-block';
-            logoutBtn.style.display = 'none';
-        }
-        logoutBtn.addEventListener('click', function() {
-            localStorage.removeItem('user');
-            window.location.reload();
-        });
-    });
-</script>
     <header>
         <div class="logo">
             <img src="./src/img/logo-canabis (1).webp" alt="logo" height="60px" width="60px" loading="lazy">
@@ -47,12 +28,11 @@
                 <li><a href="./src/views/beneficios.html">Beneficios</a></li>
                 <li><a href="./src/views/padecimientos.html">Padecimientos</a></li>
                 <li><a href="./src/views/questions.html">Preguntas</a></li>
-                <li><a href="./src/views/tienda.html">Tiendas</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
         <div class="container-btn-nav">
-            <a href="src/views/login.html" class="button_slide slide_right" id="login-btn-header">INICIAR SESIÓN</a>
-            <button id="logout-btn-header" class="button_slide slide_right" style="display:none;">CERRAR SESIÓN</button>
+            <a href="src/views/login.html" class="button_slide slide_right">INICIAR SESIÓN</a>
         </div>
     </header>
 
@@ -62,6 +42,7 @@
             <div class="texto">
                 <h1>Cannabis Medicinal: Tu Bienestar</h1>
                 <p class="slide-desc">Descubre cómo el cannabis medicinal puede mejorar tu calidad de vida de forma responsable y segura. Información, asesoría y acompañamiento profesional en cada paso.</p>
+                <button>Ver más</button>
             </div>
             <div class="imagen">
                 <img src="src/img/slide 1 (1).webp" alt="imgslide1" height="600px" width="700px" loading="lazy">
@@ -73,6 +54,7 @@
             <div class="texto">
                 <h1>Beneficios y Tratamientos</h1>
                 <p class="slide-desc">Conoce los beneficios terapéuticos del cannabis en el tratamiento de diversos padecimientos. Aqui te orientamos con el uso de productos.</p>
+                <button>Conocer más</button>
             </div>
             <div class="imagen">
                 <img src="src/img/slide 2 (1).webp" alt="imgslide2" height="600px" width="400px" loading="lazy">
@@ -84,6 +66,7 @@
             <div class="texto">
                 <h1>Resuelve tus Dudas</h1>
                 <p class="slide-desc">Resuelve tus dudas sobre el cannabis medicinal, sus formas de uso y recomendaciones legales. Accede a recursos educativos y atención personalizada.</p>
+                <button>Descubrir</button>
             </div>
             <div class="imagen">
                 <img src="src/img/slide 3 (1).webp" alt="imgslide3" height="700px" width="350px" loading="lazy">
@@ -133,40 +116,7 @@
 <script type="module" src="/src/js/nav.js"></script>
 <script type="module" src="./src/js/index.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const loginBtn = document.getElementById('login-btn');
-        const logoutBtn = document.getElementById('logout-btn');
-        const loginBtnHeader = document.getElementById('login-btn-header');
-        const logoutBtnHeader = document.getElementById('logout-btn-header');
-        const user = localStorage.getItem('user');
-        if (user) {
-            loginBtn.style.display = 'none';
-            logoutBtn.style.display = 'inline-block';
-            loginBtnHeader.style.display = 'none';
-            logoutBtnHeader.style.display = 'inline-block';
-        } else {
-            loginBtn.style.display = 'inline-block';
-            logoutBtn.style.display = 'none';
-            loginBtnHeader.style.display = 'inline-block';
-            logoutBtnHeader.style.display = 'none';
-        }
-            function cerrarSesion() {
-                localStorage.clear();
-                loginBtn.style.display = 'inline-block';
-                logoutBtn.style.display = 'none';
-                loginBtnHeader.style.display = 'inline-block';
-                logoutBtnHeader.style.display = 'none';
-            }
-            logoutBtn.addEventListener('click', cerrarSesion);
-            logoutBtnHeader.addEventListener('click', cerrarSesion);
-        logoutBtnHeader.addEventListener('click', function() {
-            localStorage.removeItem('user');
-            window.location.reload();
-        });
-    });
-</script>
-
 </body>
 
 </html>
+

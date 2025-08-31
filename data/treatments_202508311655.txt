@@ -1,0 +1,43 @@
+|id_treatment|treatment_name               |id_product|text_ailments                                               |id_condition|create_at          |update_at          |
+|------------|-----------------------------|----------|------------------------------------------------------------|------------|-------------------|-------------------|
+|1           |Sublingual-CBD-Básico        |1         |2–4 gotas bajo la lengua, mantener 60 segundos y tragar.    |1           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|2           |Sublingual-CBD-Avanzado      |1         |5–10 gotas bajo la lengua, mantener 60 segundos y tragar.   |2           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|3           |Sublingual-CBD+THC-Balanceado|2         |2–3 gotas bajo la lengua, mañana y noche.                   |3           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|4           |Sublingual-CBD+THC-Fuerte    |2         |5–7 gotas bajo la lengua en la noche.                       |4           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|5           |Oral-Cápsulas-CBD            |3         |Ingerir 1 cápsula con agua, 1–2 veces al día.               |5           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|6           |Oral-Cápsulas-CBD+THC        |4         |Ingerir 1 cápsula después de comidas, máximo 2 al día.      |6           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|7           |Oral-Cápsulas-Blandas        |5         |Tomar 1 cápsula blanda antes de dormir.                     |7           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|8           |Inhalación-Flor-CBD          |6         |Inhalar en vaporizador 1–2 veces al día.                    |8           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|9           |Inhalación-Flor-Mixta        |7         |Inhalar en vaporizador 1–2 veces en la tarde o noche.       |9           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|10          |Extracto-Concentrado-CBD     |8         |Diluir en bebida o aplicar bajo la lengua, 1–2 veces al día.|10          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|11          |Comestible-Gomitas-CBD       |9         |Ingerir 1 gomita después de comidas.                        |11          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|12          |Comestible-Gomitas-Mixtas    |10        |Consumir 1 gomita por la noche.                             |12          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|13          |Comestible-Chocolate-CBD     |10        |Consumir media porción después de la cena.                  |13          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|14          |Tintura-Alcohol-CBD          |11        |Diluir 10 gotas en agua o té, 2 veces al día.               |14          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|15          |Tintura-Glicerina-CBD        |12        |Colocar 5 gotas bajo la lengua, 2 veces al día.             |15          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|16          |Infusión-Té-CBD              |13        |Preparar en agua caliente, beber 1 taza al día.             |16          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|17          |Infusión-Bebida-CBD          |14        |Consumir 1 lata o vaso al día.                              |17          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|18          |Infusión-Café-CBD            |15        |Beber una taza en la mañana.                                |18          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|19          |Tópico-Crema-CBD             |16        |Aplicar sobre la piel afectada 2–3 veces al día.            |19          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|20          |Tópico-Bálsamo-CBD           |17        |Masajear sobre músculos o articulaciones 2 veces al día.    |20          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|21          |Parche-CBD-24h               |18        |Colocar en la piel limpia, cambiar cada 24 horas.           |21          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|22          |Spray-Oral-CBD               |19        |Aplicar 2 sprays bajo la lengua, máximo 6 veces al día.     |22          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|23          |Supositorio-CBD              |20        |Introducir 1 supositorio, máximo 2 veces al día.            |23          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|24          |Sublingual-CBD-Microdosis    |1         |1–2 gotas bajo la lengua en la mañana.                      |1           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|25          |Sublingual-CBD-Dosis-Alta    |1         |10–15 gotas bajo la lengua por la noche.                    |7           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|26          |Oral-Cápsulas-Diarias        |3         |1 cápsula en la mañana y otra en la noche.                  |8           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|27          |Oral-Cápsulas-Nocturnas      |4         |1 cápsula antes de dormir.                                  |9           |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|28          |Inhalación-Flor-Suave        |6         |Inhalar 1 vez al día en vaporizador.                        |10          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|29          |Inhalación-Flor-Intensa      |7         |Inhalar 2–3 veces antes de dormir.                          |11          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|30          |Extracto-Concentrado-Fuerte  |8         |Tomar 3–5 gotas en agua o jugo.                             |12          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|31          |Comestible-Gomita-Nocturna   |9         |Consumir 1 gomita antes de dormir.                          |13          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|32          |Comestible-Chocolate-Nocturno|10        |Comer 1 pedazo por la noche.                                |14          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|33          |Tintura-Alcohol-Fuerte       |11        |Diluir 15 gotas en agua, 1 vez al día.                      |15          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|34          |Tintura-Glicerina-Nocturna   |12        |Colocar 10 gotas bajo la lengua por la noche.               |16          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|35          |Infusión-Té-Nocturno         |13        |Beber 1 taza antes de dormir.                               |17          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|36          |Infusión-Café-Mañana         |15        |Tomar 1 taza en la mañana.                                  |18          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|37          |Tópico-Crema-Nocturna        |16        |Aplicar en la zona afectada antes de dormir.                |19          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|38          |Tópico-Bálsamo-Deportivo     |17        |Aplicar después de actividad física.                        |20          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|39          |Parche-CBD-Nocturno          |18        |Colocar antes de dormir y retirar en la mañana.             |21          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|40          |Spray-Oral-Rápido            |19        |Aplicar 1 spray en situaciones de ansiedad.                 |22          |2025-08-27 00:53:38|2025-08-27 00:53:38|
+|41          |Supositorio-CBD-Nocturno     |20        |Aplicar 1 supositorio antes de dormir.                      |23          |2025-08-27 00:53:38|2025-08-27 00:53:38|
